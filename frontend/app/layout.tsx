@@ -1,14 +1,21 @@
 import './globals.css';
-export const metadata = { title: 'TMS' };
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+import type { Metadata } from 'next';
+import Shell from './shell';
+
+export const metadata: Metadata = {
+  title: 'TrackToSuccess – Task Management System',
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body>
-        <main style={{ padding: 20, fontFamily: 'Arial, sans-serif' }}>
-          <h1>Task Management System</h1>
-          {children}
-        </main>
+        <Shell>{children}</Shell>
       </body>
     </html>
-  )
+  );
 }
